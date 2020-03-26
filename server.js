@@ -20,7 +20,7 @@ app.get('/set', (req, res) => {
 
 app.get('/get', (req, res) => {
   if (req.session.data != null) {
-    res.send(req.session.data[req.query.key]);
+    res.json(req.session.data[req.query.key]);
   }
   res.end();
 });

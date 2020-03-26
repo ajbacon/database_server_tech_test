@@ -61,7 +61,9 @@ describe('server', () => {
 
       const response2 = await testSession.get('/get').query({ key: 'somekey' });
 
-      expect(response2.text).toEqual('somedata');
+      console.log(response2);
+
+      expect(response2.body).toEqual('somedata');
     });
   });
 });
