@@ -25,11 +25,26 @@ describe('server', () => {
     });
   });
 
-  describe('GET /set?somekey=somevalue', () => {
+  describe('GET /set', () => {
     it('should return a response status of 200', async () => {
+      const response = await request.get('/set');
+
+      expect(response.status).toEqual(200);
+    });
+
+    it('should have have the correct path with query', async () => {
       const response = await request.get('/set?somekey=somevalue');
 
       expect(response.status).toEqual(200);
+      expect(response.res.req.path).toEqual('/set?somekey=somevalue');
+    });
+
+    it('should save the query data to a session', async () => {
+      let serverAgent = request;
+      console.log(request);
+
+      expect(response.status).toEqual(200);
+      expect(response.res.req.path).toEqual('/set?somekey=somevalue');
     });
   });
 });
