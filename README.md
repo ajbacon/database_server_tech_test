@@ -30,7 +30,7 @@ Where ```somekey``` is the same key as entered to set the value.
 
 ## Testing
 
-Tests performed using ***Jest*** with ***Supertest**
+Tests performed using ***Jest*** with ***Supertest***
 
 Run ```npm test```
 
